@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>ATS - Plateforme de recrutement (sécurisée)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="authBox">
+  <h3>Se connecter</h3>
+  <div class="flex">
+    <input id="loginEmail" placeholder="Email">
+    <input id="loginPassword" placeholder="Mot de passe" type="password">
+    <button onclick="login()">Login</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+  <div id="userinfo" class="small"></div>
+</div>
+
+<h2>Ajouter Candidature</h2>
+<div class="flex">
+  <input id="candidate" placeholder="Candidate ID (optionnel)">
+  <input id="job" placeholder="Job ID (optionnel)">
+  <input id="source" placeholder="Source (ex: Email)" value="Email">
+  <button onclick="addApp()">Ajouter</button>
+</div>
+<div id="messages"></div>
+<div id="errors"></div>
+
+<h2>Liste des Candidatures</h2>
+<button onclick="loadApps()">Actualiser</button>
+<ul id="list"></ul>
+
+<hr>
+
+<h3>Recherche Multi-Critères</h3>
+<div class="flex">
+  <select id="searchStatus">
+    <option value="">--Statut--</option>
+    <option value="reçu">reçu</option>
+    <option value="présélection">présélection</option>
+    <option value="entretien">entretien</option>
+    <option value="décision">décision</option>
+    <option value="embauche">embauche</option>
+    <option value="refus">refus</option>
+  </select>
+  <input id="searchSource" placeholder="Source (optionnel)">
+  <button onclick="search()">Chercher</button>
+</div>
+<ul id="searchResults"></ul>
+
+<hr>
+
+<h3>KPI - Nombre de candidatures par statut</h3>
+<button onclick="loadKPI()">Voir KPI</button>
+<ul id="kpi"></ul>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
