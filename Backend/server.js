@@ -7,6 +7,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const app = express();
+// Serve static files from the Frontend folder
+app.use(express.static(path.join(__dirname, '../Frontend')));
 app.use(cors());
 app.use(express.json());
 

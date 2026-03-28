@@ -1,3 +1,4 @@
+const path = require('path');
 const base = ''; // el served from same origin
 
 function showMsg(text) { const el = document.getElementById('messages'); el.innerText = text; setTimeout(()=> el.innerText = '', 3000); }
