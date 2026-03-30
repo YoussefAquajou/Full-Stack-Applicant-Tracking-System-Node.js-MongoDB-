@@ -1,9 +1,12 @@
 // createAdmin.js
+require('dotenv').config(); // This protects your password!
 const { MongoClient } = require('mongodb');
 const bcrypt = require('bcryptjs');
 
-const url = "mongodb://127.0.0.1:27017";
+// Now it uses the secret from .env!
+const url = process.env.MONGO_URL || "mongodb://127.0.0.1:27017";
 const client = new MongoClient(url);
+// ... keep the rest of your run() function exactly the same ...
 
 async function run() {
   try {
